@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara M. Jumaa | Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+      
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: rgb(77, 59, 56);
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem auto;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .navgation ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .navgation a {
+            text-decoration: none;
+            color: rgb(251, 208, 222);
+        }
+
+        .theme-btn {
+            background: none;
+            border: 1px solid rgb(213, 192, 252);
+            color: rgb(213, 192, 252);
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        hr { border: 0.5px solid rgb(213, 192, 252); opacity: 0.3; }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5rem auto;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .shortcut {
+            font-size: 2rem;
+            color: rgb(203, 212, 226);
+            font-family: 'Brush Script MT', cursive;
+            margin-bottom: -25px;
+        }
+
+        .title { font-size: 6rem; font-style: italic; color: rgb(213, 192, 252); }
+        .name { 
+              font-family: 'Caveat', cursive; 
+              font-size: 1.5rem; /* Small and elegant */
+              color: white; 
+              align-self: flex-end; 
+              margin-top: -15px; 
+              margin-right: 20px; 
+              margin-bottom: 10px;
+              font-weight: 400;
+              letter-spacing: 1px;
+            }
+        .herobthns { display: flex; gap: 1rem; margin-top: 1rem; align-items: center; }
+        .herosub {
+             display: flex;
+             flex-direction: column;
+             align-items: flex-start; 
+             max-width: 600px; 
+           }
+
+        .cv-container, .MyWorks {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: rgb(245, 224, 231);
+            color: rgb(77, 59, 56);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            width: 180px; 
+            height: 55px;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .AboutMe img {
+            width: 22px; 
+            height: auto;
+            display: block;
+        }
+
+        .filter-btn {
+            background-color: rgb(245, 224, 231);
+            color: rgb(77, 59, 56);
+            border-radius: 24px;
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .hero-img { width: 220px; border-radius: 20px; }
+
+        .Me {
+            background-color: rgb(246, 224, 231);
+            color: rgb(19, 4, 35);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5rem 3rem;
+            gap: 5rem;
+        }
+
+        .AboutName { font-family: 'Brush Script MT', cursive; }
+        .AboutTitle { font-family: 'Brush Script MT', cursive; color: rgb(167, 42, 84); }
+
+        .works { background-color: rgb(232, 224, 246); padding: 4rem 1rem; color: #130423; }
+        
+        .filter-container {
+            margin: 2rem 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #searchInput {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid #d5c0fc;
+            width: 300px;
+        }
+
+        .works ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .works li {
+            background-color: rgb(77, 59, 56);
+            padding: 2rem;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .works li:hover {
+            transform: scale(1.1); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+        
+
+        .works li img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 35px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .designs-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .designs-grid img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 99;
+        }
+
+        #singleViewer {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 4000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #singleViewer img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border: 2px solid white;
+        }
+
+        .contactcontainer { margin: 5rem auto; max-width: 1200px; text-align: center; }
+        .contact { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; }
+        
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero, .Me { flex-direction: column; text-align: center; }
+            .title { font-size: 3.5rem; }
+            #searchInput { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="work with me .jpg" width="80" style="border-radius: 50%;">
+    <nav class="navgation">
+        <ul>
+            <li><a href="#AboutMe">About</a></li>
+            <li><a href="#MyWorks">Works</a></li>
+            <li><a href="#ContactMe">Contact</a></li>
+            <li><button class="theme-btn" onclick="toggleTheme()">🌓 Theme</button></li>
+        </ul>
+    </nav>
+</header>
+
+<hr>
+
+<section class="hero">
+    <div class="herosub">
+        <h1 class="shortcut">creative</h1>
+        <h1 class="title">portfolio</h1>
+        <h1 class="name">SARA M. JUMAA</h1>
+        <div class="herobthns">
+            <a class="cv-container" href="Sara mohammed.pdf" download>
+                <span>About Me</span>
+                <span class="AboutMe"><img src="9205302.png" alt="download icon"> </span>
+            </a>
+            <a class="MyWorks" href="#MyWorks">MY Work</a>
+        </div>
+    </div>
+    <img src="design with me lady.jpg" class="hero-img" alt="Creative Illustration">
+</section>
+
+<section class="Me" id="AboutMe">
+    <img src="work with me .jpg" width="400" alt="About Me" style="border-radius: 20px;">
+    <div class="textcontainer">
+        <h1 style="font-size: 3rem;"><span class="AboutName">about</span> <span class="AboutTitle">me</span></h1>
+        <p style="margin-top:1rem; font-family: monospace;">
+           Digital media student with strong foundation in content creation and visual storytelling. Skilled in
+graphic design tools and social media strategies, with a commitment to continuous learning. Adept at
+balancing creativity with strategic thinking to build meaningful and impactful connections with
+audiences through innovative projects.
+        </p>
+    </div>
+</section>
+
+<section class="works" id="MyWorks">
+    <div class="workscontainer">
+        <h1 style="text-align: center; font-size: 2.5rem;">My Projects</h1>
+        
+        <div class="filter-container">
+            <input type="text" id="searchInput" placeholder="Search projects..." onkeyup="filterProjects(this.value)">
+            <button onclick="filterProjects('All')" class="filter-btn">All</button>
+            <button onclick="filterProjects('Branding')" class="filter-btn">Branding</button>
+            <button onclick="filterProjects('Design')" class="filter-btn">Design</button>
+        </div>
+
+        <ul id="project-list"></ul> 
+    </div>
+</section>
+
+<div id="designsModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('designsModal')">&times;</span>
+        <h2 style="color: rgb(167, 42, 84);">My Graphic Designs Gallery</h2>
+        <div class="designs-grid">
+            <img src="photos/3e7e0cea-4c8f-42d6-b9cc-607eebfc794d.jpg" alt="Design 1" onclick="viewSingle(this.src)">
+            <img src="photos/5a36599f-e668-4763-9f54-b9f590d53f2f.jpg" alt="Design 2" onclick="viewSingle(this.src)">
+            <img src="photos/5956478933970652112.jpg" alt="Design 3" onclick="viewSingle(this.src)">
+            <img src="photos/5956478933970652113.jpg" alt="Design 4" onclick="viewSingle(this.src)">
+            <img src="photos/5956478933970652114.jpg" alt="Design 5" onclick="viewSingle(this.src)">
+            <img src="photos/5956478933970652115.jpg" alt="Design 6" onclick="viewSingle(this.src)">
+            <img src="photos/ee2ec629-e5ab-44ce-9175-50b3414a57f8.jpg" alt="Design 7" onclick="viewSingle(this.src)">
+        </div>
+    </div>
+</div>
+
+<div id="adsModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('adsModal')">&times;</span>
+        <h2 style="color: rgb(167, 42, 84);">Ads Campaign Portfolio</h2>
+        <div class="designs-grid">
+            <img src="photos/1.png" alt="Ad 1" onclick="viewSingle(this.src)">
+            <img src="photos/2.png" alt="Ad 2" onclick="viewSingle(this.src)">
+            <img src="photos/3.png" alt="Ad 3" onclick="viewSingle(this.src)">
+            <img src="photos/8EB342C0-C095-4A33-9D0F-E8659EDDBF17_L0_001-8_13_2025, 10_57_21 PM.png" alt="Ad 2" onclick="viewSingle(this.src)">
+            <img src="photos/Untitled design.png" alt="Ad 3" onclick="viewSingle(this.src)">
+            <img src="photos/matcha.png" alt="Ad 6" onclick="viewSingle(this.src)">
+            <img src="photos/Croissant.png" alt="Ad 7" onclick="viewSingle(this.src)">
+            <img src="photos/orange (1).png" alt="Ad 8" onclick="viewSingle(this.src)">
+            <img src="photos/orange (3).png" alt="Ad 9" onclick="viewSingle(this.src)">
+            <img src="photos/3ee00ba0-27f8-4845-8c2d-1552ccd253e9.jpg" alt="Ad 10" onclick="viewSingle(this.src)">
+            <img src="photos/174B40D0-B471-4270-A674-56B856745E5C_L0_001-8_10_2025, 12_57_28 AM.jpg" alt="Ad 11" onclick="viewSingle(this.src)">
+        </div>
+    </div>
+</div>
+
+<div id="singleViewer" onclick="this.style.display='none'">
+    <img id="fullImage" src="">
+</div>
+
+<section class="contactcontainer" id="ContactMe">
+    <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">Contact Me</h1>
+    <div class="contact">
+        <a href="mailto:saramh098@gmail.com" style="text-decoration:none; color:inherit;">📧 saramh098@gmail.com</a>
+        <p>📞 0541297783</p>
+    </div>
+</section>
+
+<footer>
+    <p>Built with ♡ by SMJ | 2026</p>
+</footer>
+
+<script>
+const projects = [
+    {
+        title: "Our Store ",
+        category: "Branding",
+        image: "work with me (3).jpg",
+        link: "https://www.instagram.com/espriloshop/",
+        isModal: false
+    },
+    {
+        title: "My Designs",
+        category: "Design",
+        image: "work with me (1).jpg", 
+        link: "#",
+        isModal: true,
+        modalId: "designsModal"
+    },
+    {
+        title: "Ads Campaign",
+        category: "Marketing",
+        image: "design.jpg",
+        link: "#",
+        isModal: true,
+        modalId: "adsModal"
+    }
+];
+
+function renderProjects(data = projects) {
+    const list = document.getElementById('project-list');
+    list.innerHTML = data.map(p => `
+        <li>
+            <a href="${p.isModal ? `javascript:openModal('${p.modalId}')` : p.link}" ${p.isModal ? '' : 'target="_blank"'}>
+                <img src="${p.image}" alt="${p.title}">
+            </a>
+            <p style="color: white; margin-top:10px;">${p.title}</p>
+        </li>
+    `).join('');
+}
+
+function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function viewSingle(src) {
+    const viewer = document.getElementById('singleViewer');
+    const fullImg = document.getElementById('fullImage');
+    fullImg.src = src;
+    viewer.style.display = 'flex';
+}
+
+function filterProjects(val) {
+    const search = val.toLowerCase();
+    const filtered = projects.filter(p => 
+        val === 'All' || p.category === val || p.title.toLowerCase().includes(search)
+    );
+    renderProjects(filtered);
+}
+
+function toggleTheme() {
+    const body = document.body;
+    const isDark = body.style.backgroundColor !== 'white';
+    body.style.backgroundColor = isDark ? 'white' : 'rgb(77, 59, 56)';
+    body.style.color = isDark ? 'black' : 'white';
+}
+
+window.onload = () => {
+    renderProjects();
+};
+
+window.onclick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+        e.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+};
+</script>
+
+</body>
+</html>

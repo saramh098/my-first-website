@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+body {
+background-color: rgb(77, 59, 56);
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0.5rem auto;
+max-width: 1200px;
+padding: 0 1rem;
+}
+
+.navgation ul {
+display: flex;
+list-style: none;
+gap: 1rem;
+}
+
+.navgation a {
+text-decoration: none;
+color: rgb(251, 208, 222);
+}
+
+.navgation a:hover {
+color: rgb(203, 212, 226);
+}
+
+hr {
+border: 1px solid rgb(213, 192, 252);
+}
+
+.hero {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 5rem auto;
+max-width: 1200px;
+}
+
+.herosub {
+display: flex;
+flex-direction: column;
+}
+
+.shortcut {
+font-size: 2rem;
+color: rgb(203, 212, 226);
+font-family: 'Brush Script MT', cursive;
+margin-bottom: -25px;
+}
+
+.title {
+font-size: 6rem;
+font-style: italic;
+font-family: "Abril Fatface", serif;
+color: rgb(213, 192, 252);
+}
+
+.name {
+font-size: 1rem;
+color: rgb(213, 192, 252);
+margin: 1rem 0;
+}
+
+.herobthns {
+display: flex;
+gap: 1rem;
+margin-top: 1rem;
+}
+
+.AboutMe,
+.MyWorks {
+background-color: rgb(245, 224, 231);
+color: rgb(77, 59, 56);
+border-radius: 24px;
+text-decoration: none;
+padding: 0.5rem 1.5rem;
+display: flex;
+align-items: center;
+gap: 0rem;
+}
+
+.hero-right {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.hero-img {
+width: 220px;
+}
+
+.Me {
+background-color: rgb(246, 224, 231);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 3rem;
+gap: 5rem;
+}
+
+.textcontainer {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.texttitle {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 2rem;
+}
+
+.AboutName {
+color: rgb(19, 4, 35);
+font-family: 'Brush Script MT', cursive;
+}
+
+.AboutTitle {
+color: rgb(167, 42, 84);
+font-family: 'Brush Script MT', cursive;
+}
+
+.AboutMePar {
+color: rgb(19, 4, 35);
+font-family: monospace;
+text-align: justify;
+}
+.works {
+    background-color: rgb(232, 224, 246);
+    background-size: contain;
+    margin: 0rem 0rem;
+}
+.workcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: monospace;
+    align-items: left;
+    margin: 5rem auto;
+    max-width: 1200px;
+    gap: 0 auto;
+}
+.ProjectTitle{
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    justify-content: left;
+    gap: 5px;
+    font-size: 2rem;
+}
+.AboutName2{
+    color: rgb(19, 4, 35);
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.AboutTitle2 {
+color: rgb(167, 42, 84);
+    font-family: 'Brush Script MT', cursive;
+    font-style: oblique;
+}
+    .works ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .works li {
+        border-radius: 16px;
+        background-color: rgb(77, 59, 56);
+        backdrop-filter: blur( 4px);
+        padding: 1rem 2rem ;
+        margin: 2rem 5rem;
+    }
+    .works li img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        transition: transform 0.2s;
+
+    }
+    .works li :hover {
+        transform: scale(1.5);
+    }
+    .emailcontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 2rem auto;
+        max-width: 1200px;
+
+    }
+    .contacttitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: spx;
+        margin-bottom: 8px;
+        font-size: 2rem;
+    }
+    .AboutName3 {
+        color: rgb(203, 212, 226);
+        text-decoration: none;
+
+    }
+    .AboutTitle3{
+        color: rgb(203, 212, 226);
+        text-decoration: none;
+    }
+    .contact {
+        display: flex;
+        align-items: center ;
+        justify-content: center;
+        margin-right: 2rem;
+        gap: 20rem;
+    }
+    .contact h3, .contact a{
+        color: rgb(232, 224, 246);
+        text-decoration: none;
+    }
+    .emailandphone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+footer{
+    text-align: center;
+    color: rgb(203, 212, 226);
+    padding: 3rem;
+}
